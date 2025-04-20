@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Task</title>
+  <style>
+    /* Common Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    /* Horizontal Menu */
+    .horizontal-menu ul {
+      display: flex;
+      list-style: none;
+      background-color: #333;
+    }
+
+    .horizontal-menu li {
+      padding: 10px 20px;
+    }
+
+    .horizontal-menu a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Vertical Menu */
+    .vertical-menu {
+      width: 200px;
+      background-color: #f0f0f0;
+    }
+
+    .vertical-menu ul {
+      list-style: none;
+    }
+
+    .vertical-menu li {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    /* Dropdown Menu */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #eee;
+      min-width: 160px;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      padding: 10px;
+      display: block;
+      text-decoration: none;
+      color: black;
+    }
+
+    /* Responsive Menu */
+    .responsive-menu {
+      display: none;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .horizontal-menu ul {
+        display: none;
+        flex-direction: column;
+      }
+
+      .responsive-menu {
+        display: block;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .show-menu {
+        display: flex !important;
+      }
+    }
+
+    /* Overflow in Container */
+    .overflow-container {
+      width: 300px;
+      height: 100px;
+      border: 2px solid red;
+      overflow: scroll;
+      margin: 20px 0;
+    }
+
+    /* Overflow in Text Block */
+    .text-block {
+      width: 200px;
+      height: 50px;
+      border: 2px solid green;
+      overflow: hidden;
+    }
+
+    /* Overflow in Image */
+    .img-container {
+      width: 200px;
+      height: 100px;
+      overflow: hidden;
+      border: 2px solid blue;
+    }
+
+    .img-container img {
+      width: 200px;
+      
+    }
+
+    /* Overflow in Dropdown */
+    .scrollable-dropdown {
+      width: 200px;
+      height: 100px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    /* Inline-block properties */
+    .inline-block-demo div {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      margin: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h2>Horizontal Menu</h2>
+  <div class="horizontal-menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+    </ul>
+  </div>
+
+  <h2>Vertical Menu</h2>
+  <div class="vertical-menu">
+    <ul>
+      <li>Dashboard</li>
+      <li>Profile</li>
+      <li>Settings</li>
+    </ul>
+  </div>
+
+  <h2>Dropdown Menu</h2>
+  <div class="dropdown">
+    <button>Hover Me</button>
+    <div class="dropdown-content">
+      <a href="#">Submenu 1</a>
+      <a href="#">Submenu 2</a>
+      <a href="#">Submenu 3</a>
+    </div>
+  </div>
+
+  <h2>Responsive Navigation</h2>
+  <div class="responsive-menu">
+    <span class="hamburger" onclick="toggleMenu()">☰ Menu</span>
+    <div class="horizontal-menu">
+      <ul id="menu-items">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Overflow in Container</h2>
+  <div class="overflow-container">
+    This is a long content inside a small box that demonstrates overflow scrolling. Scroll to see the rest of the content.
+  </div>
+
+  <h2>Overflow in Text Block</h2>
+  <div class="text-block">
+    This text is too long to fit in this small block and will be hidden.
+  </div>
+
+  <h2>Overflow in Image</h2>
+  <div class="img-container">
+    <img src="F:/cat.jpg" alt="overflow image" />
+  </div>
+
+  <h2>Overflow in Dropdown Menu</h2>
+  <div class="scrollable-dropdown">
+    <p>Item 1</p>
+    <p>Item 2</p>
+    <p>Item 3</p>
+    <p>Item 4</p>
+    <p>Item 5</p>
+    <p>Item 6</p>
+  </div>
+
+  <h2>Inline-block Demo</h2>
+  <div class="inline-block-demo">
+    <div>Box 1</div>
+    <div>Box 2</div>
+    <div>Box 3</div>
+  </div>
+
+  
+</body>
+</html>
